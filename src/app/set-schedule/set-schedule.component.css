@@ -44,22 +44,22 @@
   }
 .modal-body {
     padding: 35px 15px;
-    background-color: #e2220f17;
+    background-color: #108942;
   }
 .modal-header {
     padding: 10px;
     border-bottom: none;
-    background-color: #e2220f17;
+    background-color: #108942;
     border-radius: 4px 4px 0px 0px;
 }
 .modal-footer{
     border-top: none;
-    background-color: #e2220f17;
+    background-color: #108942;
     border-radius: 0px 0px 4px 4px;
     text-align: center;
 }
 .modal-body h3{
-    color: red;
+    color: black;
     font-size: 22px;
 }
 .ok_button{
@@ -69,6 +69,9 @@
     border: 1px solid #33333361;
 }
 .ok_button:hover{
-    background-color: red;
+    background-color: #116CB0;
     color: #fff;
 } 
+.textarea_space{
+    margin-left:-62px;
+}

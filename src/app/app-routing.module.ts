@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ApplicantlistComponent } from './applicantlist/applicantlist.component';
 import { ScheduledComponent } from './scheduled/scheduled.component';
@@ -9,47 +9,69 @@ import { PendingComponent } from './pending/pending.component';
 import { SetScheduleComponent } from './set-schedule/set-schedule.component';
 import { FinalApplicantComponent } from './final-applicant/final-applicant.component';
 import { FailedApplicantComponent } from './failed-applicant/failed-applicant.component';
+import { HomeComponent } from './home/home.component';
+import { componentFactoryName } from '@angular/compiler';
+import { PendingListComponent } from './pending-list/pending-list.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-{
-    path: 'home',
-    component: HomeComponent
-},
+	{		path: '',
+		component: LoginComponent
+	},
+	{
+		path:'login',
+		component: LoginComponent
+	},
+	{
+    	path: 'home',
+		component: HomeComponent,
+		children:[
+			{
+				path: '',
+				component: DashboardComponent
+			},
+			{
+				path: 'dashboard',
+				component: DashboardComponent
+			},
+			{
+				path: 'applicant',
+				component: ApplicantlistComponent
+			},
+			{
+				path: 'scheduled',
+				component: ScheduledComponent
+			},
+			{
+				path: 'pending',
+				component: PendingComponent,
+				children: [
+					{
+					path: '',
+					component: PendingListComponent
+				},
+				{
+					path: 'setschedule',
+					component: SetScheduleComponent
+				}
+				]
+			},
 
-{
-	path: 'editprofile',
-	component: EditprofileComponent
-},
-{
-	path: 'applicantlist',
-	component: ApplicantlistComponent
-},
-
-{
-	path: 'scheduled',
-	component: ScheduledComponent
-},
-{
-	path: 'pending',
-	component: PendingComponent
-},
-{
-	path: 'final',
-	component: FinalApplicantComponent
-},
-{
-	path: 'failed',
-	component: FailedApplicantComponent
-},
-{
-	path: 'update',
-	component: UpdateStatusComponent
-},
-{
-	path: 'setschedule',
-	component: SetScheduleComponent
-},
+			{
+				path:'finalapplicants',
+				component: FinalApplicantComponent
+			},
+			{
+				path:'editprofile',
+				component:UpdateStatusComponent
+			},
+			{
+				path:'failedapplicants',
+				component: FailedApplicantComponent
+			}
+		]
+}
 ];
 
 @NgModule({

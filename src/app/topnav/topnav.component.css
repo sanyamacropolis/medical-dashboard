@@ -1,13 +1,28 @@
 .header {
-    background-color: #f1f1f1;
-    padding: 20px 0px;
+  background-color: #f1f1f1;
+  padding: 0px;
+}
+
+.navbar-inverse{
+  margin: 0px;
+  border-radius: 0px;
+}
+
+.navbar-brand{
+  margin-left: 14px;
+}
+.logout{
+  float:right;
+  padding-right: 10px;
+}
+.navbar-center{
+  text-align: center;
+}
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
   }
-  
-  @media screen and (max-width: 500px) {
-    .header a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-    
-  }
+
+}
